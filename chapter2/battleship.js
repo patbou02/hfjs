@@ -9,7 +9,8 @@ let guess;
 let guesses = 0;
 let hits = 0;
 let isSunk = false;
-let stats = `You took ${guesses} guesses to sink the battleship, which means your shooting accuracy was ${3/guesses}`;
+let accuracy = 3/guesses;
+let stats = `You took ${guesses} guesses to sink the battleship, which means your shooting accuracy was ${accuracy}.`;
 
 // Game logic starts
 while (isSunk === false) {
