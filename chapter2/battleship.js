@@ -33,3 +33,30 @@ while (!isSunk) {
     }
   }
 }
+
+// TODO add validation as included in commented out code below
+/*if ((typeof guess !== 'number') && ((guess < 0) || (guess > 6))) {
+  console.info('Please enter a valid guess with the following requirements:\n 1. guess is a number.\n 2. guess is a larger or equal to 0.\n 3. guess is smaller or equal to 6.');
+  console.log(typeof guess);
+} else {
+  console.info('You entered a good guess');
+  console.log(typeof guess);
+
+  // Increase number of guesses value.
+  guesses++;
+
+  if ((guess === location1) || (guess === location2) || (guess === location3)) {
+
+    // Increase number of hits value.
+    hits++;
+
+    if (hits === 3) {
+      // set isSunk to true and notify user that they have sunk the battleship.
+      isSunk = true;
+      console.info('You sank my battleship!');
+    }
+  }
+  // Notify user of how many times they've entered a guess and how many times they've hit the target.
+  console.info(`You've guessed ${guesses} time(s).`);
+  console.info(`You've hit ${hits} time(s).\n ==== `);
+}*/
