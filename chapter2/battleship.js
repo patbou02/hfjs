@@ -9,6 +9,7 @@ let guess;
 let guesses = 0;
 let hits = 0;
 let isSunk = false;
+let stats = `You took ${guesses} guesses to sink the battleship, which means your shooting accuracy was ${3/guesses}`;
 
 // Game logic starts
 while (isSunk === false) {
@@ -17,7 +18,7 @@ while (isSunk === false) {
   if (guess < 0 || guess > 6) {
     alert("Please enter a valid cell number!");
   } else {
-    guess++;
+    guesses++;
     if (guess === location1 || guess === location2 || guess === location3) {
       hits++;
       if (hits === 3) {
@@ -27,3 +28,5 @@ while (isSunk === false) {
     }
   }
 }
+
+console.log(stats);
