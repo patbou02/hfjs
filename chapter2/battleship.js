@@ -20,6 +20,10 @@ while (isSunk === false) {
     guess++;
     if (guess === location1 || guess === location2 || guess === location3) {
       hits++;
+      if (hits === 3) {
+        isSunk = true;
+        console.info("You sank my battleship!");
+      }
     }
   }
 }
