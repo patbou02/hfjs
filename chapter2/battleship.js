@@ -9,3 +9,8 @@ let guess;
 let guesses = 0;
 let hits = 0;
 let isSunk = false;
+
+// Game logic starts
+while (isSunk === false) {
+  guess = prompt("Ready, aim, fire! (enter a number 0-6):");
+}
