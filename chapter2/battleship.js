@@ -2,9 +2,9 @@
 console.info('Play Battleship!');
 
 // Define initial variables
-let location1 = 3;
-let location2 = 4;
-let location3 = 5;
+let randomLoc1 = Math.floor(Math.random() * 5);
+let location2 = randomLoc1 + 1;
+let location3 = location2 + 1;
 let guess;
 let guesses = 0;
 let hits = 0;
@@ -18,7 +18,7 @@ while (!isSunk) {
     alert("Please enter a valid cell number!");
   } else {
     guesses++;
-    if (guess == location1 || guess == location2 || guess == location3) {
+    if (guess == randomLoc1 || guess == location2 || guess == location3) {
       alert('HIT!');
       hits++;
       if (hits === 3) {
