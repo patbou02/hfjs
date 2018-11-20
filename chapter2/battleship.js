@@ -20,12 +20,15 @@ while (isSunk === false) {
     alert("Please enter a valid cell number!");
   } else {
     guesses++;
-    if (guess === location1 || guess === location2 || guess === location3) {
+    if (guess == location1 || guess == location2 || guess == location3) {
+      alert('HIT!');
       hits++;
       if (hits === 3) {
         isSunk = true;
         console.info("You sank my battleship!");
       }
+    } else {
+      alert('MISS');
     }
   }
 }
