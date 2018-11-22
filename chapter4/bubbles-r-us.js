@@ -23,6 +23,18 @@ function findHighestScore(arr) {
       highestScore = arr[i];
     }
   }
-  return console.log(highestScore);
+  console.log(`Highest bubble score: ${highestScore}`);
+  return highestScore;
 }
 findHighestScore(scores);
+
+function valuesWithHighestScore(arr) {
+  let valuesWithHighestScore = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === findHighestScore(arr)) {
+      valuesWithHighestScore.push(i);
+    }
+  }
+  return console.log(`Solutions with highest score: ${valuesWithHighestScore}`);
+}
+valuesWithHighestScore(scores);
