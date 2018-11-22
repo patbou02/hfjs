@@ -8,12 +8,12 @@ let scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69, 34, 55, 51, 52, 44
 let totalTests = scores.length;
 
 function outputScores(arr) {
-  let messageOutput = "Bubbles solutions #";
+  let output = "Bubbles solutions #";
   for (let i = 0; i < arr.length; i++) {
-    messageOutput += `${i} score: ${arr[i]}.\n`;
+    output += `${i} score: ${arr[i]}.\n`;
 
   }
-  return messageOutput;
+  return output;
 }
 
 console.log(`Bubbles test: ${totalTests}`);
