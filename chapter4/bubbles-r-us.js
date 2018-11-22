@@ -15,3 +15,14 @@ function outputScores(arr) {
 }
 
 console.log(`Bubbles test: ${totalTests}`);
+
+function findHighestScore(arr) {
+  let highestScore = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > highestScore) {
+      highestScore = arr[i];
+    }
+  }
+  return console.log(highestScore);
+}
+findHighestScore(scores);
