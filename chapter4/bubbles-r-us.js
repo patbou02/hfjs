@@ -29,13 +29,13 @@ function findHighScore(arr) {
 }
 findHighScore(scores);
 
-function valuesWithHighestScore(arr) {
-  let valuesWithHighestScore = [];
+function bestSolutions(arr) {
+  let bestSolutions = [];
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === findHighestScore(arr)) {
-      valuesWithHighestScore.push(i);
+    if (arr[i] === findHighScore(arr)) {
+      bestSolutions.push(i);
     }
   }
-  return console.log(`Solutions with highest score: ${valuesWithHighestScore}`);
+  return bestSolutions;
 }
-valuesWithHighestScore(scores);
+bestSolutions(scores);
