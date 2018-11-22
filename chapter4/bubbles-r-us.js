@@ -18,17 +18,16 @@ function outputScores(arr) {
 
 console.log(`Bubbles test: ${totalTests}`);
 
-function findHighestScore(arr) {
-  let highestScore = 0;
+function findHighScore(arr) {
+  let highScore = 0;
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > highestScore) {
-      highestScore = arr[i];
+    if (arr[i] > highScore) {
+      highScore = arr[i];
     }
   }
-  console.log(`Highest bubble score: ${highestScore}`);
-  return highestScore;
+  return highScore;
 }
-findHighestScore(scores);
+findHighScore(scores);
 
 function valuesWithHighestScore(arr) {
   let valuesWithHighestScore = [];
