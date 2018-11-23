@@ -9,32 +9,33 @@ let totalTests = scores.length;
 
 function outputScores(arr) {
   for (let i = 0; i < arr.length; i++) {
-    let messageOutput = `Bubbles solutions #${i} score: ${arr[i]}.`;
-    console.log(messageOutput);
+    console.log(`Bubbles solutions #${i} score: ${arr[i]}`);
   }
 }
+
+function findHighScore(arr) {
+  let highScore = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > highScore) {
+      highScore = arr[i];
+    }
+  }
+  return highScore;
+}
+
+function bestSolutions(arr) {
+  let bestSolutions = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === findHighScore(arr)) {
+      bestSolutions.push(i);
+    }
+  }
+  return bestSolutions;
+}
+
+outputScores(scores);
 
 console.log(`Bubbles test: ${totalTests}`);
 
-function findHighestScore(arr) {
-  let highestScore = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > highestScore) {
-      highestScore = arr[i];
-    }
-  }
-  console.log(`Highest bubble score: ${highestScore}`);
-  return highestScore;
-}
-findHighestScore(scores);
-
-function valuesWithHighestScore(arr) {
-  let valuesWithHighestScore = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === findHighestScore(arr)) {
-      valuesWithHighestScore.push(i);
-    }
-  }
-  return console.log(`Solutions with highest score: ${valuesWithHighestScore}`);
-}
-valuesWithHighestScore(scores);
+let highestScore = console.log("Highest bubble score: " + findHighScore(scores));
+let best = console.log("Solutions with the highest score: " + bestSolutions(scores));
