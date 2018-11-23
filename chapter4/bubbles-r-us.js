@@ -8,15 +8,10 @@ let scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69, 34, 55, 51, 52, 44
 let totalTests = scores.length;
 
 function outputScores(arr) {
-  let output = "Bubbles solutions #";
   for (let i = 0; i < arr.length; i++) {
-    output += `${i} score: ${arr[i]}.\n`;
-
+    console.log(`Bubbles solutions #${i} score: ${arr[i]}`);
   }
-  return output;
 }
-
-console.log(`Bubbles test: ${totalTests}`);
 
 function findHighScore(arr) {
   let highScore = 0;
@@ -27,7 +22,6 @@ function findHighScore(arr) {
   }
   return highScore;
 }
-findHighScore(scores);
 
 function bestSolutions(arr) {
   let bestSolutions = [];
@@ -38,4 +32,10 @@ function bestSolutions(arr) {
   }
   return bestSolutions;
 }
-bestSolutions(scores);
+
+outputScores(scores);
+
+console.log(`Bubbles test: ${totalTests}`);
+
+let highestScore = console.log("Highest bubble score: " + findHighScore(scores));
+let best = console.log("Solutions with the highest score: " + bestSolutions(scores));
