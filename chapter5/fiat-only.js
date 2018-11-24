@@ -21,7 +21,13 @@ let fiat = {
   },
   drive: function() {
     if (this.started) {
-      console.log("Zoom zoom!");
+      if (this.fuel > 0) {
+        console.log(`${this.make} ${this.model} goes zoom zoom!`);
+        this.fuel--;
+      } else {
+        console.log(`Uh oh, out of fuel.`);
+        this.stop();
+      }
     } else {
       console.log("You need to start the engine first.");
     }
