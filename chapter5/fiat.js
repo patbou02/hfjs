@@ -24,5 +24,5 @@ let fiat = {
     } else {
       console.log("You need to start the engine first.");
     }
-  }
+  },
 };
