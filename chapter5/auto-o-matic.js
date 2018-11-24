@@ -10,12 +10,12 @@ function makeCar() {
   let colors = ["red", "blue", "tan", "yellow", "white"];
   let convertible = [true, false];
 
-  rand1 = Math.floor(Math.random() * makes.length);
-  rand2 = Math.floor(Math.random() * models.length);
-  rand3 = Math.floor(Math.random() * years.length);
-  rand4 = Math.floor(Math.random() * colors.length);
-  rand5 = Math.floor(Math.random() * 5) + 1;
-  rand6 = Math.floor(Math.random() * 2);
+  let rand1 = Math.floor(Math.random() * makes.length);
+  let rand2 = Math.floor(Math.random() * models.length);
+  let rand3 = Math.floor(Math.random() * years.length);
+  let rand4 = Math.floor(Math.random() * colors.length);
+  let rand5 = Math.floor(Math.random() * 5) + 1;
+  let rand6 = Math.floor(Math.random() * 2);
 
   let car = {
     make: makes[rand1],
