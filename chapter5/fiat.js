@@ -35,6 +35,20 @@ let cadi = {
   passengers: 5,
   convertible: false,
   mileage: 12892,
+  started: false,
+  start: function() {
+    this.started = true;
+  },
+  stop: function() {
+    this.started = false;
+  },
+  drive: function() {
+    if (this.started) {
+      console.log("Zoom zoom!");
+    } else {
+      console.log("You need to start the engine first.");
+    }
+  },
 };
 
 let chevy = {
@@ -45,6 +59,20 @@ let chevy = {
   passengers: 2,
   convertible: false,
   mileage: 1021,
+  started: false,
+  start: function() {
+    this.started = true;
+  },
+  stop: function() {
+    this.started = false;
+  },
+  drive: function() {
+    if (this.started) {
+      console.log("Zoom zoom!");
+    } else {
+      console.log("You need to start the engine first.");
+    }
+  },
 };
 
 let taxi = {
@@ -55,6 +83,20 @@ let taxi = {
   passengers: 4,
   convertible: false,
   mileage: 281341,
+  started: false,
+  start: function() {
+    this.started = true;
+  },
+  stop: function() {
+    this.started = false;
+  },
+  drive: function() {
+    if (this.started) {
+      console.log("Zoom zoom!");
+    } else {
+      console.log("You need to start the engine first.");
+    }
+  },
 };
 
 fiat.drive();
