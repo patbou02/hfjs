@@ -22,7 +22,7 @@ let fiat = {
   drive: function() {
     if (this.started) {
       if (this.fuel > 0) {
-        console.log(`${this.make} ${this.model} goes zoom zoom!`);
+        console.log(`${this.make} ${this.model} goes zoom zoom! Current gas level is: ${this.fuel}.`);
         this.fuel--;
       } else {
         console.log(`Uh oh, out of fuel.`);
