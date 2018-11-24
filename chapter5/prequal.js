@@ -23,3 +23,9 @@ function prequal(car) {
 }
 
 let worthALook = prequal(taxi);
+
+if (worthALook) {
+  console.log(`You gotta checkout this ${taxi.make} ${taxi.model}.`);
+} else {
+  console.log(`You should really pass on the ${taxi.make} ${taxi.model}.`);
+}
