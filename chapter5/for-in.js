@@ -26,3 +26,8 @@ let fiat = {
     }
   },
 };
+
+// create for in loop that outputs object structure
+for (let property in fiat) {
+  console.log(`${property}: ${fiat[property]}`);
+}
