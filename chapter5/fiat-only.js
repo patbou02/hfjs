@@ -14,7 +14,12 @@ let fiat = {
   started: false,
   fuel: 0,
   start: function() {
-    this.started = true;
+    if (this.fuel > 0) {
+      this.started = true;
+      console.log("Engine started...");
+    } else {
+      console.log("The car is on empty, fill up before starting!");
+    }
   },
   stop: function() {
     this.started = false;
