@@ -12,3 +12,14 @@ let taxi = {
   convertible: false,
   mileage: 281341,
 };
+
+function prequal(car) {
+  if (car.mileage > 10000) {
+    return false;
+  } else if (car.year > 1960) {
+    return false
+  }
+  return true;
+}
+
+let worthALook = prequal(taxi);
