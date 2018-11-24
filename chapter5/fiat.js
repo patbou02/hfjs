@@ -103,3 +103,15 @@ fiat.drive();
 fiat.start();
 fiat.drive();
 fiat.stop();
+
+cadi.start();
+cadi.drive();
+cadi.stop();
+
+chevy.start();
+chevy.drive();
+chevy.stop();
+
+taxi.start();
+taxi.drive();
+taxi.stop();
