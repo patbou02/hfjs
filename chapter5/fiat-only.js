@@ -37,7 +37,12 @@ let fiat = {
   },
 };
 
-fiat.drive();
 fiat.start();
+fiat.drive();
+fiat.addFuel(3);
+fiat.start();
+fiat.drive();
+fiat.drive();
+fiat.drive();
 fiat.drive();
 fiat.stop();
