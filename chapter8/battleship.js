@@ -8,7 +8,8 @@ let view = {
   // This method takes a string message passed as an argument and displays it
   // in the message display area.
   displayMessage: function(msg) {
-    // to be continued
+    let messageArea = document.getElementById("messageArea");
+    messageArea.innerHTML = msg;
   },
   // This method adds a .hit class in the appropriate table TD based on a passed
   // location argument if passed value DOES match any ship location.
