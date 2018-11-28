@@ -14,11 +14,13 @@ let view = {
   // This method adds a .hit class in the appropriate table TD based on a passed
   // location argument if passed value DOES match any ship location.
   displayHit: function(location) {
-    // to be continued
+    let cell = document.getElementById(location);
+    cell.setAttribute("class", "hit");
   },
   // This method adds a .miss class in the appropriate table TD based on a passed
   // location argument if passed value DOESN'T match any ship location.
   displayMiss: function(location) {
-    // to be continued
+    let cell = document.getElementById(location);
+    cell.setAttribute("class", "miss");
   }
 };
