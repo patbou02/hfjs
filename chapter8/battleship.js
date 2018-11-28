@@ -41,8 +41,11 @@ let model = {
       let index = locations.indexOf(guess);
       if (index >= 0) {
         // We have a hit!
+        ship.hits[index] = "hit";
+        return true;
       }
     }
+    return false;
   },
 };
 
