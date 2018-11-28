@@ -41,10 +41,21 @@ let model = {
       if (index >= 0) {
         // We have a hit!
         ship.hits[index] = "hit";
+        if (this.isSunk(ship)) {
+          this.shipsSunk++;
+        }
         return true;
       }
     }
     return false;
+  },
+  isSunk: function(ship) {
+    for (let i = 0; this.shipLength; i++) {
+      if (ship.hits[i] !== "hit") {
+        return false;
+      }
+    }
+    return true;
   },
 };
 
