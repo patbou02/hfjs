@@ -64,3 +64,18 @@ let model = {
   },
 };
 
+/*
+model.fire("53"); // miss
+
+model.fire("06"); // hit
+model.fire("16"); // hit
+model.fire("26"); // hit
+
+model.fire("34"); // hit
+model.fire("24"); // hit
+model.fire("44"); // hit
+
+model.fire("12"); // hit
+model.fire("11"); // hit
+model.fire("10"); // hit
+*/
