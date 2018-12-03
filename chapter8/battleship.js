@@ -92,3 +92,14 @@ let controller = {
 
   }
 };
+
+function parseGuess(guess) {
+  let alphabet = "abcdefg".toUpperCase().split('');
+
+  if ((guess === null) || (guess.length !== 2)) {
+    alert("Oops, please enter a letter and a number on the board.");
+  } else {
+    let firstChar = guess.charAt(0),
+    row = alphabet.indexOf(firstChar);
+  }
+}
