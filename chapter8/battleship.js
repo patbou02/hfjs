@@ -81,3 +81,14 @@ model.fire("12"); // hit
 model.fire("11"); // hit
 model.fire("10"); // hit
 */
+
+// CONTROLLER
+let controller = {
+  guesses: 0,
+
+  // This method takes a guess in the form of "A0", "B4" etc... and converts it in
+  // an ID that is meaningful within the table TDs.
+  processGuess: function(guess) {
+
+  }
+};
