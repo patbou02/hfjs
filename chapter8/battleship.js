@@ -100,6 +100,13 @@ function parseGuess(guess) {
     alert("Oops, please enter a letter and a number on the board.");
   } else {
     let firstChar = guess.charAt(0),
-    row = alphabet.indexOf(firstChar);
+    row = alphabet.indexOf(firstChar),
+    column = guess.charAt(1);
+
+    if (isNaN(row) || isNaN(column)) {
+      alert("Oops, that isn't on the board.");
+    } else if (row < 0 || row >= model.boardSize) {
+      alert("Oops, that's off the board!");
+    }
   }
 }
