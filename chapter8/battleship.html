@@ -12,10 +12,11 @@
     }
     #board {
       position: relative;
-      width: 1024px;
-      height: 863px;
+      width: 754px;
+      height: 604px;
       margin: auto;
       background: url("images/board.jpg") no-repeat;
+      background-size: 683px ;
     }
     #messageArea {
       position: absolute;
@@ -25,18 +26,18 @@
     }
     table {
       position: absolute;
-      left: 173px;
-      top: 98px;
+      left: 112px;
+      top: 63px;
       border-spacing: 0;
     }
     td {
-      width: 94px;
-      height: 94px;
+      width: 63px;
+      height: 63px;
     }
     form {
       position: absolute;
       bottom: 0;
-      right: 0;
+      right: 265px;
       padding: 15px;
       background-color: rgb(83, 175, 19);
     }
@@ -45,8 +46,14 @@
       border-color: rgb(83, 175, 19);
       font-size: 1em;
     }
-    .hit { background: url('images/ship.png') no-repeat center center; }
-    .miss { background: url('images/miss.png') no-repeat center center; }
+    .hit {
+      background: url('images/ship.png') no-repeat center center;
+      background-size: 52px 23px;
+    }
+    .miss {
+      background: url('images/miss.png') no-repeat center center;
+      background-size: 52px 23px;
+    }
   </style>
 </head>
 <body>
