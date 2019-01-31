@@ -86,27 +86,26 @@ model.fire("10"); // hit
 let controller = {
   guesses: 0,
 
-  // This method takes a guess in the form of "A0", "B4" etc... and converts it in
-  // an ID that is meaningful within the table TDs.
+  // This method takes a guess in the form of "A0", "B4" etc...
+  // and converts it to an ID that is meaningful within the table TDs.
   processGuess: function(guess) {
 
   }
 };
 
 function parseGuess(guess) {
-  let alphabet = "abcdefg".toUpperCase().split('');
+  let alphabet = "ABCDEFG".split('');
 
   if ((guess === null) || (guess.length !== 2)) {
     alert("Oops, please enter a letter and a number on the board.");
   } else {
     let firstChar = guess.charAt(0),
-    row = alphabet.indexOf(firstChar),
-    column = guess.charAt(1);
+        row = alphabet.indexOf(firstChar),
+        column = guess.charAt(1);
 
     if (isNaN(row) || isNaN(column)) {
       alert("Oops, that isn't on the board.");
-    } else if (row < 0 || row >= model.boardSize ||
-    column < 0 || column >= model.boardSize) {
+    } else if (row < 0 || row >= model.boardSize || column < 0 || column >= model.boardSize) {
       alert("Oops, that's off the board!");
     } else {
       return row + column;
