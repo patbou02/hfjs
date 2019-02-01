@@ -145,4 +145,12 @@ function handleFireButton() {
   guessInput.value = "";
 }
 
+function handleKeyPress(e) {
+  let fireButton = document.getElementById('fireButton');
+  if (e.keyCode === 13) {
+    fireButton.click();
+    return false;
+  }
+}
+
 window.onload = init;
