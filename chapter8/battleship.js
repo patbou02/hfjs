@@ -121,7 +121,7 @@ function parseGuess(guess) {
   return null;
 }
 
-controller.processGuess("A0");
+/*controller.processGuess("A0");
 controller.processGuess("A6");
 controller.processGuess("B6");
 controller.processGuess("C6");
@@ -130,4 +130,15 @@ controller.processGuess("D4");
 controller.processGuess("E4");
 controller.processGuess("B0");
 controller.processGuess("B1");
-controller.processGuess("B2");
+controller.processGuess("B2");*/
+
+function init() {
+  let fireButton = document.getElementById('fireButton');
+  fireButton.onclick = handleFireButton;
+}
+
+function handleFireButton() {
+
+}
+
+window.onload = init;
