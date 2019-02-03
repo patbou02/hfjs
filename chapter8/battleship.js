@@ -32,9 +32,9 @@ let model = {
   shipsSunk: 0,
   shipLength: 3,
   ships: [
-    { locations: ["06", "16", "26"], hits: ["", "", ""], },
-    { locations: ["24", "34", "44"], hits: ["", "", ""], },
-    { locations: ["10", "11", "12"], hits: ["", "", ""], },
+    { locations: [0, 0, 0], hits: ["", "", ""], },
+    { locations: [0, 0, 0], hits: ["", "", ""], },
+    { locations: [0, 0, 0], hits: ["", "", ""], },
   ],
   fire: function(guess) {
     for (let i = 0; i < this.numShips; i++) {
@@ -90,7 +90,7 @@ let model = {
 
     let newShipLocations = [];
     for (let i = 0; i < this.shipLength; i++) {
-      if (direction === i) {
+      if (direction === 1) {
         // Add location for horizontal ship
         newShipLocations.push(`${row}${col + i}`);
       } else {
@@ -182,6 +182,11 @@ controller.processGuess("B2");*/
 function init() {
   let fireButton = document.getElementById('fireButton');
   fireButton.onclick = handleFireButton;
+
+  let guessInput = document.getElementById('guessInput');
+  guessInput.onkeypress = handleKeyPress;
+
+  model.generateShipLocations();
 }
 
 function handleFireButton() {
