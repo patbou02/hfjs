@@ -100,6 +100,17 @@ let model = {
     }
     return newShipLocations;
   },
+  collision: function(locations) {
+    for (let i = 0; i < this.numShips; i++) {
+      let ship = model.ships[i];
+      for (let j = 0; j < locations.length; j++) {
+        if (ship.locations.indexOf(locations[j]) >= 0) {
+          return true;
+        }
+      }
+    }
+    return false;
+  },
 };
 
 /*
