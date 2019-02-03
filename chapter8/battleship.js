@@ -4,7 +4,7 @@
 console.info('Battleship');
 
 // MODEL
-let model = {
+let MODEL = {
   boardSize: 7,
   numShips: 3,
   shipsSunk: 0,
@@ -21,17 +21,17 @@ let model = {
       if (index >= 0) {
         // We have a hit!
         ship.hits[index] = "hit";
-        view.displayHit(guess);
-        view.displayMessage("HIT!");
+        VIEW.displayHit(guess);
+        VIEW.displayMessage("HIT!");
         if (this.isSunk(ship)) {
-          view.displayMessage("You sank my battleship!");
+          VIEW.displayMessage("You sank my battleship!");
           this.shipsSunk++;
         }
         return true;
       }
     }
-    view.displayMiss(guess);
-    view.displayMessage("You missed.");
+    VIEW.displayMiss(guess);
+    VIEW.displayMessage("You missed.");
     return false;
   },
   isSunk: function(ship) {
@@ -80,7 +80,7 @@ let model = {
   },
   collision: function(locations) {
     for (let i = 0; i < this.numShips; i++) {
-      let ship = model.ships[i];
+      let ship = MODEL.ships[i];
       for (let j = 0; j < locations.length; j++) {
         if (ship.locations.indexOf(locations[j]) >= 0) {
           return true;
@@ -92,7 +92,7 @@ let model = {
 };
 
 // VIEW
-let view = {
+let VIEW = {
   // This method takes a string message passed as an argument and displays it
   // in the message display area.
   displayMessage: function(msg) {
@@ -114,7 +114,7 @@ let view = {
 };
 
 // CONTROLLER
-let controller = {
+let CONTROLLER = {
   guesses: 0,
 
   // This method takes a guess in the form of "A0", "B4" etc...
@@ -123,9 +123,9 @@ let controller = {
     let location = parseGuess(guess);
     if (location) {
       this.guesses++;
-      let hit = model.fire(location);
-      if (hit && model.shipsSunk === model.numShips) {
-        view.displayMessage(`You sank all my battleships, in ${this.guesses} guesses.`);
+      let hit = MODEL.fire(location);
+      if (hit && MODEL.shipsSunk === MODEL.numShips) {
+        VIEW.displayMessage(`You sank all my battleships, in ${this.guesses} guesses.`);
       }
     }
   }
@@ -143,7 +143,7 @@ function parseGuess(guess) {
 
     if (isNaN(row) || isNaN(column)) {
       alert("Oops, that isn't on the board.");
-    } else if (row < 0 || row >= model.boardSize || column < 0 || column >= model.boardSize) {
+    } else if (row < 0 || row >= MODEL.boardSize || column < 0 || column >= MODEL.boardSize) {
       alert("Oops, that's off the board!");
     } else {
       return row + column;
@@ -155,7 +155,7 @@ function parseGuess(guess) {
 function handleFireButton() {
   let guessInput = document.getElementById('guessInput');
   let guess = guessInput.value;
-  controller.processGuess(guess);
+  CONTROLLER.processGuess(guess);
 
   guessInput.value = "";
 }
@@ -175,7 +175,7 @@ function init() {
   let guessInput = document.getElementById('guessInput');
   guessInput.onkeypress = handleKeyPress;
 
-  model.generateShipLocations();
+  MODEL.generateShipLocations();
 }
 
 window.onload = init;
