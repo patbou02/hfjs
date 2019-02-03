@@ -77,18 +77,25 @@ let model = {
     let direction = Math.floor(Math.random() * 2);
     let row, col;
 
+    // Starting Coordinates
     if (direction === 1) {
       // Horizontal ship
+      row = Math.floor(Math.random() * this.boardSize);
+      col = Math.floor(Math.random() * this.boardSize - this.shipLength);
     } else {
       // Vertical ship
+      row = Math.floor(Math.random() * this.boardSize - this.shipLength);
+      col = Math.floor(Math.random() * this.boardSize);
     }
 
     let newShipLocations = [];
     for (let i = 0; i < this.shipLength; i++) {
       if (direction === i) {
         // Add location for horizontal ship
+        newShipLocations.push(`${row}${col + i}`);
       } else {
         // Add location for vertical ship
+        newShipLocations.push(`${row + i}${col}`);
       }
     }
     return newShipLocations;
