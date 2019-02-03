@@ -3,28 +3,6 @@
 
 console.info('Battleship');
 
-// VIEW
-let view = {
-  // This method takes a string message passed as an argument and displays it
-  // in the message display area.
-  displayMessage: function(msg) {
-    let messageArea = document.getElementById("messageArea");
-    messageArea.innerHTML = msg;
-  },
-  // This method adds a .hit class in the appropriate table TD based on a passed
-  // location argument if passed value DOES match any ship location.
-  displayHit: function(location) {
-    let cell = document.getElementById(location);
-    cell.setAttribute("class", "hit");
-  },
-  // This method adds a .miss class in the appropriate table TD based on a passed
-  // location argument if passed value DOESN'T match any ship location.
-  displayMiss: function(location) {
-    let cell = document.getElementById(location);
-    cell.setAttribute("class", "miss");
-  }
-};
-
 // MODEL
 let model = {
   boardSize: 7,
@@ -113,21 +91,27 @@ let model = {
   },
 };
 
-/*
-model.fire("53"); // miss
-
-model.fire("06"); // hit
-model.fire("16"); // hit
-model.fire("26"); // hit
-
-model.fire("34"); // hit
-model.fire("24"); // hit
-model.fire("44"); // hit
-
-model.fire("12"); // hit
-model.fire("11"); // hit
-model.fire("10"); // hit
-*/
+// VIEW
+let view = {
+  // This method takes a string message passed as an argument and displays it
+  // in the message display area.
+  displayMessage: function(msg) {
+    let messageArea = document.getElementById("messageArea");
+    messageArea.innerHTML = msg;
+  },
+  // This method adds a .hit class in the appropriate table TD based on a passed
+  // location argument if passed value DOES match any ship location.
+  displayHit: function(location) {
+    let cell = document.getElementById(location);
+    cell.setAttribute("class", "hit");
+  },
+  // This method adds a .miss class in the appropriate table TD based on a passed
+  // location argument if passed value DOESN'T match any ship location.
+  displayMiss: function(location) {
+    let cell = document.getElementById(location);
+    cell.setAttribute("class", "miss");
+  }
+};
 
 // CONTROLLER
 let controller = {
@@ -168,27 +152,6 @@ function parseGuess(guess) {
   return null;
 }
 
-/*controller.processGuess("A0");
-controller.processGuess("A6");
-controller.processGuess("B6");
-controller.processGuess("C6");
-controller.processGuess("C4");
-controller.processGuess("D4");
-controller.processGuess("E4");
-controller.processGuess("B0");
-controller.processGuess("B1");
-controller.processGuess("B2");*/
-
-function init() {
-  let fireButton = document.getElementById('fireButton');
-  fireButton.onclick = handleFireButton;
-
-  let guessInput = document.getElementById('guessInput');
-  guessInput.onkeypress = handleKeyPress;
-
-  model.generateShipLocations();
-}
-
 function handleFireButton() {
   let guessInput = document.getElementById('guessInput');
   let guess = guessInput.value;
@@ -203,6 +166,16 @@ function handleKeyPress(e) {
     fireButton.click();
     return false;
   }
+}
+
+function init() {
+  let fireButton = document.getElementById('fireButton');
+  fireButton.onclick = handleFireButton;
+
+  let guessInput = document.getElementById('guessInput');
+  guessInput.onkeypress = handleKeyPress;
+
+  model.generateShipLocations();
 }
 
 window.onload = init;
