@@ -73,6 +73,26 @@ let model = {
       this.ships[i].locations = locations;
     }
   },
+  generateShip: function() {
+    let direction = Math.floor(Math.random() * 2);
+    let row, col;
+
+    if (direction === 1) {
+      // Horizontal ship
+    } else {
+      // Vertical ship
+    }
+
+    let newShipLocations = [];
+    for (let i = 0; i < this.shipLength; i++) {
+      if (direction === i) {
+        // Add location for horizontal ship
+      } else {
+        // Add location for vertical ship
+      }
+    }
+    return newShipLocations;
+  },
 };
 
 /*
