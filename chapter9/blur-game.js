@@ -13,9 +13,11 @@ function init() {
   img.onclick = showAnswer;
 }
 
-function showAnswer() {
-  let img = document.getElementById('zero');
-  img.src = "images/zero.jpg";
+function showAnswer(eventObj) {
+  let img = eventObj.target;
+  let name = img.id + ".jpg";
+
+  img.src = "images/" + name;
 }
 
 window.onload = init;
