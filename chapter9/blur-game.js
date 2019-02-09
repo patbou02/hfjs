@@ -8,14 +8,19 @@ function init() {
   for (let i = 0; i < images.length; i++) {
     images[i].onclick = showAnswer;
   }
-  let img = document.getElementById('zero');
-
-  img.onclick = showAnswer;
 }
 
 function showAnswer(eventObj) {
   let img = eventObj.target;
   let name = img.id + ".jpg";
+
+  img.src = "images/" + name;
+
+  setTimeout(reblur, 2000, img);
+}
+
+function reblur(img) {
+  let name = img.id + "blur.jpg";
 
   img.src = "images/" + name;
 }
