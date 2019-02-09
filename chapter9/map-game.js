@@ -13,13 +13,9 @@ function init() {
 
 function showCoordinates(eventObj) {
   let map = document.getElementById('coords');
-  let x = map.pageX;
-  let y = map.pageY;
+  let x = eventObj.pageX;
+  let y = eventObj.pageY;
   map.innerHTML = `Map coordinates: ${x}, ${y}`;
-  let img = eventObj.target;
-  let name = img.id + ".jpg";
-
-  img.src = "images/" + name;
 }
 
 
