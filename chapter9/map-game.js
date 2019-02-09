@@ -12,10 +12,10 @@ function init() {
 }
 
 function showCoordinates(eventObj) {
-  let map = document.getElementById('coords');
+  let coordinates = document.getElementById('coords');
   let x = eventObj.pageX;
   let y = eventObj.pageY;
-  map.innerHTML = `Map coordinates: ${x}, ${y}`;
+  coordinates.innerHTML = `Map coordinates: ${x}, ${y}`;
 }
 
 
