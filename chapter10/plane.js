@@ -4,11 +4,11 @@
 console.info('Plane Game');
 
 let passengers = [
-  { name: "Pierre", paid: true },
-  { name: "Nora", paid: true },
-  { name: "Pascal", paid: false },
-  { name: "Yannick", paid: false },
-  { name: "Jean Pierre", paid: true },
+  { name: "Pierre", paid: true, ticket: "coach", },
+  { name: "Nora", paid: true, ticket: "firstclass", },
+  { name: "Pascal", paid: false, ticket: "firstclass", },
+  { name: "Yannick", paid: false, ticket: "coach", },
+  { name: "Jean Pierre", paid: true, ticket: "coach", },
 ];
 
 function processPassengers(passengers, testFunction) {
@@ -46,11 +46,7 @@ if (!allPaid) {
 
 function printPassenger(passenger) {
   let message = passenger.name;
-  if (passenger.paid === true) {
-    message += " has paid.";
-  } else {
-    message += " has NOT paid.";
-  }
+  passenger.paid ? message += " has paid." : message += " has NOT paid.";
   console.log(message);
 }
 
