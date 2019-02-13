@@ -32,16 +32,26 @@ let allCanFly = processPassengers(passengers, checkNoFlyList);
 
 if (!allCanFly) {
   console.log("The plane can't take off: we have a passenger on the no-fly list.");
+} else {
+  console.log("No one on the no-fly list, therefore we are clear for takeoff.");
 }
 
 let allPaid = processPassengers(passengers, checkNotPaid);
 
 if (!allPaid) {
   console.log("the plane can't take off: not everyone has paid.");
+} else {
+  console.log("All have paid, therefore we are clear for takeoff.");
 }
 
 function printPassenger(passenger) {
-  return console.log(passengers.name);
+  let message = passenger.name;
+  if (passenger.paid === true) {
+    message += " has paid.";
+  } else {
+    message += " has NOT paid.";
+  }
+  console.log(message);
 }
 
 processPassengers(passengers, printPassenger);
