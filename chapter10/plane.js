@@ -51,3 +51,20 @@ function printPassenger(passenger) {
 }
 
 processPassengers(passengers, printPassenger);
+
+function serveCustomer(passenger) {
+  // get drink order
+  createDrinkOrder(passenger);
+
+  // get dinner order
+
+  // pickup trash
+}
+
+function createDrinkOrder(passenger) {
+  if (passenger.ticket === "firstclass") {
+    alert("Would you like a cocktail or wine?");
+  } else {
+    alert("Your choice is cola or water");
+  }
+}
