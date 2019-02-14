@@ -53,12 +53,16 @@ function printPassenger(passenger) {
 processPassengers(passengers, printPassenger);
 
 function serveCustomer(passenger) {
+  // createDrinkOrder returns function which is stored in getDrinkOrderFunction variable
+  let getDrinkOrderFunction = createDrinkOrder(passenger);
+  getDrinkOrderFunction();
   // get drink order
-  createDrinkOrder(passenger);
+  getDrinkOrderFunction();
 
   // get dinner order
+  getDrinkOrderFunction();
 
-  // pickup trash
+  // use function we get from createDrinkOrder whenever we need to get a drink order for this passenger
 }
 
 function createDrinkOrder(passenger) {
