@@ -57,10 +57,8 @@ function serveCustomer(passenger) {
   let getDrinkOrderFunction = createDrinkOrder(passenger);
   getDrinkOrderFunction();
   // get drink order
-  getDrinkOrderFunction();
 
   // get dinner order
-  getDrinkOrderFunction();
 
   // use function we get from createDrinkOrder whenever we need to get a drink order for this passenger
 }
@@ -81,3 +79,11 @@ function createDrinkOrder(passenger) {
   }
   return orderFunction; // return function
 }
+
+function servePassengers(passengers) {
+  for (let i = 0; i < passengers.length; i++) {
+    serveCustomer(passengers[i]);
+  }
+}
+
+servePassengers(passengers);
