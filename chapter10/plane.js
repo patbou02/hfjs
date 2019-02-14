@@ -62,9 +62,18 @@ function serveCustomer(passenger) {
 }
 
 function createDrinkOrder(passenger) {
-  if (passenger.ticket === "firstclass") {
-    alert("Would you like a cocktail or wine?");
+  let orderFunction; // variable will hold function to be returned
+
+  if (passenger.ticket === "firstclass") { // test passenger's ticket type
+    // first class? create function to take first class order
+    orderFunction = function() {
+      alert("Would you like a cocktail or wine?");
+    };
   } else {
-    alert("Your choice is cola or water");
+    // coach? create function to take coach class order
+    orderFunction = function() {
+      alert("Your choice is cola or water");
+    };
   }
+  return orderFunction; // return function
 }
