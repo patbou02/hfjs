@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 10: Web-ville Cola</title>
+</head>
+<body>
+  Array Sorting File
+  <script>
+    let numbersArray = [60, 50, 62, 58, 54, 54];
+
+    function compareNumbers(num1, num2) {
+      if (num1 > num2) {
+        // place num1 after num2
+        return 1;
+      } else if (num1 === num2) {
+        // leave numbers in place as they are equivalent
+        return 0;
+      } else {
+        // place num1 before num2
+        return -1;
+      }
+    }
+
+    numbersArray.sort(compareNumbers);
+
+    console.log(numbersArray);
+  </script>
+  <script src="../shared/reload.js"></script>
+</body>
+</html>
