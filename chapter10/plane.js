@@ -5,9 +5,9 @@ console.info('Plane Game');
 
 let passengers = [
   { name: "Pierre", paid: true, ticket: "coach", },
-  { name: "Nora", paid: true, ticket: "firstclass", },
+  { name: "Nora", paid: true, ticket: "premium", },
   { name: "Pascal", paid: false, ticket: "firstclass", },
-  { name: "Yannick", paid: false, ticket: "coach", },
+  { name: "Yannick", paid: false, ticket: "premium", },
   { name: "Jean Pierre", paid: true, ticket: "coach", },
 ];
 
@@ -53,11 +53,12 @@ function printPassenger(passenger) {
 processPassengers(passengers, printPassenger);
 
 function serveCustomer(passenger) {
-  // createDrinkOrder returns function which is stored in getDrinkOrderFunction variable
+  // createDrinkOrder returns function in stored getDrinkOrderFunction variable
   let getDrinkOrderFunction = createDrinkOrder(passenger);
+  let getDinnerOrderFunction = createDinnerOrder(passenger);
   getDrinkOrderFunction();
   // get drink order
-
+  getDinnerOrderFunction();
   // get dinner order
 
   // use function we get from createDrinkOrder whenever we need to get a drink order for this passenger
@@ -71,13 +72,36 @@ function createDrinkOrder(passenger) {
     orderFunction = function() {
       alert("Would you like a cocktail or wine?");
     };
+  } else if (passenger.ticket === "premium") {
+    orderFunction = function() {
+      alert("Would you like wine, cola or water?");
+    };
   } else {
     // coach? create function to take coach class order
     orderFunction = function() {
-      alert("Your choice is cola or water");
+      alert("Your choice is cola or water.");
     };
   }
   return orderFunction; // return function
+}
+
+function createDinnerOrder(passenger) {
+  let orderFunction;
+
+  if (passenger.ticket === "fistclass") {
+    orderFunction = function() {
+      alert("Would you like chicken or pasta?");
+    };
+  } else if (passenger.ticket === "premium") {
+    orderFunction = function() {
+      alert("Can I offer you a snackbox or a cheese plate?");
+    };
+  } else {
+    orderFunction = function() {
+      alert("Peanuts or pretzels?");
+    }
+  }
+  return orderFunction;
 }
 
 function servePassengers(passengers) {
