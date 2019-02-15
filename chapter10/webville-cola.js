@@ -25,6 +25,16 @@ function compareSold(colaA, colaB) {
   }
 }
 
-products.sort(compareSold);
+function printProducts(products) {
+  for (let i = 0; i < products.length; i++) {
+    console.log(
+      "Name: " + products[i].name +
+      ", Calories: " + products[i].calories +
+      ", Color: " + products[i].color +
+      ", Sold: " + products[i].sold
+    );
+  }
+}
 
-console.log(products);
+products.sort(compareSold);
+printProducts(products);
