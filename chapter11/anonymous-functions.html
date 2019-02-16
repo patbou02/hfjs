@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 11: Anonymous Functions</title>
+</head>
+<body>
+  Anonymous Functions Example
+  <br><br><br>
+  <button id="bake">Bake</button>
+  <script>
+    window.onload = init;
+
+    let cookies = {
+      instructions: "Preheat oven to 350...",
+      bake: function(time) {
+        console.log("Baking the cookies.");
+        setTimeout(done, time);
+      },
+    };
+
+    function init() {
+      let button = document.getElementById("bake");
+      button.onclick = handleButton;
+    }
+
+    function handleButton() {
+      console.log("Time to bake the cookies.");
+      cookies.bake(15000);
+    }
+
+    function done() {
+      alert("Cookies are ready, take them out to cool.");
+      console.log("Cooling the cookies.");
+
+      let cool = function() {
+        alert("Cookies are cool, time to eat!");
+      };
+
+      setTimeout(cool, 5000);
+    }
+  </script>
+  <script src="../shared/reload.js"></script>
+</body>
+</html>
