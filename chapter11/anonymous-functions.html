@@ -11,7 +11,10 @@
   <br><br><br>
   <button id="bake">Bake</button>
   <script>
-    window.onload = init;
+    window.onload = function() {
+      let button = document.getElementById("bake");
+      button.onclick = handleButton;
+    };
 
     let cookies = {
       instructions: "Preheat oven to 350...",
@@ -20,11 +23,6 @@
         setTimeout(done, time);
       },
     };
-
-    function init() {
-      let button = document.getElementById("bake");
-      button.onclick = handleButton;
-    }
 
     function handleButton() {
       console.log("Time to bake the cookies.");
