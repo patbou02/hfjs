@@ -13,7 +13,11 @@
   <script>
     window.onload = function() {
       let button = document.getElementById("bake");
-      button.onclick = handleButton;
+
+      button.onclick = function() {
+        console.log("Time to bake the cookies.");
+        cookies.bake(15000);
+      };
     };
 
     let cookies = {
@@ -23,11 +27,6 @@
         setTimeout(done, time);
       },
     };
-
-    function handleButton() {
-      console.log("Time to bake the cookies.");
-      cookies.bake(15000);
-    }
 
     function done() {
       alert("Cookies are ready, take them out to cool.");
