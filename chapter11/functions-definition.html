@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 11: Functions Definition</title>
+</head>
+<body>
+Functions Definition Example
+  <script>
+    let migrating = true;
+
+    if (migrating) {
+      quack(4);
+      fly(4);
+    }
+
+    let fly = function(num) {
+      for (i = 0; i < num; i++) {
+        console.log("Flying!");
+      }
+    };
+
+    function quack(num) {
+      for (i = 0; i < num; i++) {
+        console.log("Quack!");
+      }
+    }
+
+  </script>
+  <script src="../shared/reload.js"></script>
+</body>
+</html>
