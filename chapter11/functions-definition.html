@@ -11,16 +11,16 @@ Functions Definition Example
   <script>
     let migrating = true;
 
-    if (migrating) {
-      quack(4);
-      fly(4);
-    }
-
     let fly = function(num) {
       for (i = 0; i < num; i++) {
         console.log("Flying!");
       }
     };
+
+    if (migrating) {
+      quack(4);
+      fly(4);
+    }
 
     function quack(num) {
       for (i = 0; i < num; i++) {
