@@ -37,6 +37,14 @@
       // this is the closure as it holds 'count' in its environment
     }
 
+    // test drive counter closure above
+    let doCount = makeCounter();
+
+    console.log(doCount());
+    console.log(doCount());
+    console.log(doCount());
+    console.log(doCount());
+
   </script>
   <script src="../shared/reload.js"></script>
 </body>
