@@ -43,10 +43,19 @@
     That function itself takes a number, multiplies it by n and returns the result:
     */
     function multN(n) {
-      return _______________{
-        return _______________;
+      // - multBy() being returned by multN() is a closure
+      //   with an environment containing the free variable n.
+      return function multBy(m) {
+        return (n * m);
       };
     }
+
+    // pass the value 3 to multN so this is the value's stored in the closure's environment.
+    // by invoking multN(3) we get back a function that multiplies any number we give it by 3.
+    let multBy3 = multN(3);
+
+    console.log(`Multiplying 3 by 2 = ${multBy3(2)}.`);
+    console.log(`Multiplying 3 by 6 = ${multBy3(6)}.`);
 
   </script>
   <script src="../shared/reload.js"></script>
