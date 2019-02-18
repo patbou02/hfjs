@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 11: Closures (Blur Game)</title>
+  <style>
+    body,
+    img { margin: 20px; }
+    img { width: 150px; clear: both; }
+  </style>
+</head>
+<body>
+  Blur Game Exercise File
+  <br /><hr />
+  <img src="../chapter9/images/zeroblur.jpg" id="zero">
+  <img src="../chapter9/images/oneblur.jpg" id="one">
+  <img src="../chapter9/images/twoblur.jpg" id="two">
+  <img src="../chapter9/images/threeblur.jpg" id="three">
+  <img src="../chapter9/images/fourblur.jpg" id="four">
+  <img src="../chapter9/images/fiveblur.jpg" id="five">
+  <script>
+    "use strict";
+
+    console.info('Blur Game');
+
+    function init() {
+      let images = document.getElementsByTagName('img');
+      for (let i = 0; i < images.length; i++) {
+        images[i].onclick = showAnswer;
+      }
+    }
+
+    function showAnswer(eventObj) {
+      let img = eventObj.target;
+      let name = img.id + ".jpg";
+
+      img.src = "../chapter9/images/" + name;
+
+      setTimeout(reblur, 2000, img);
+    }
+
+    function reblur(img) {
+      let name = img.id + "blur.jpg";
+
+      img.src = "../chapter9/images/" + name;
+    }
+
+    window.onload = init;
+
+  </script>
+  <script src="../shared/reload.js"></script>
+</body>
+</html>
