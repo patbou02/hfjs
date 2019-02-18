@@ -36,17 +36,14 @@
 
           img.src = `../chapter9/images/${name}`;
 
-          setTimeout(reblur, 2000, img);
+          setTimeout(function() {
+            let name = `${img.id}blur.jpg`;
+            img.src = `../chapter9/images/${name}`;
+          }, 2000);
         };
 
       }
     };
-
-    function reblur(img) {
-      let name = `${img.id}blur.jpg`;
-
-      img.src = `../chapter9/images/${name}`;
-    }
 
   </script>
   <script src="../shared/reload.js"></script>
