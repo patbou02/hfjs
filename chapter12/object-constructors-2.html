@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 12: Objects</title>
+</head>
+<body>
+Objects Constructors Example #2
+<br><br><br>
+<script>
+  "use strict";
+
+  function Dog(name, breed, weight) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+  }
+
+  let FIDO = new Dog("Fido", "Mixed", 38);
+  let FLUFFY = new Dog("Fluffy", "Poodle", 30);
+  let SPOT = new Dog("Spot", "Chihuahua", 10);
+  let dogs = [FIDO, FLUFFY, SPOT];
+
+  for (let i = 0; i < dogs.length; i++) {
+    let size = "small";
+
+    if (dogs[i].weight > 10) {
+      size = "large";
+    }
+    console.log(`Dog: ${dogs[i].name} is a ${size} ${dogs[i].breed}.`);
+  }
+</script>
+<script src="../shared/reload.js"></script>
+</body>
+</html>
