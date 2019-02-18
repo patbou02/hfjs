@@ -25,29 +25,28 @@
 
     console.info('Blur Game');
 
-    function init() {
+    window.onload = function() {
       let images = document.getElementsByTagName('img');
+
       for (let i = 0; i < images.length; i++) {
-        images[i].onclick = showAnswer;
+
+        images[i].onclick = function(eventObj) {
+          let img = eventObj.target;
+          let name = `${img.id}.jpg`;
+
+          img.src = `../chapter9/images/${name}`;
+
+          setTimeout(reblur, 2000, img);
+        };
+
       }
-    }
-
-    function showAnswer(eventObj) {
-      let img = eventObj.target;
-      let name = `${img.id}.jpg`;
-
-      img.src = `../chapter9/images/${name}`;
-
-      setTimeout(reblur, 2000, img);
-    }
+    };
 
     function reblur(img) {
       let name = `${img.id}blur.jpg`;
 
       img.src = `../chapter9/images/${name}`;
     }
-
-    window.onload = init;
 
   </script>
   <script src="../shared/reload.js"></script>
