@@ -12,10 +12,19 @@ Objects Constructors Example
 <script>
   "use strict";
 
-  let duck = {
+  /*let duck = {
     type: "redhead",
     canFly: true,
-  };
+  };*/
+
+  function Duck(type, canFly) {
+    this.type = type;
+    this.canFly = canFly;
+  }
+
+  let duck = new Duck("colvert", true);
+
+  console.log(duck);
 </script>
 <script src="../shared/reload.js"></script>
 </body>
