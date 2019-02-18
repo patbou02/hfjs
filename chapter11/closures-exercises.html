@@ -10,6 +10,7 @@
   Closures Exercises
   <script>
 
+    console.log("--- Exercise 1: ---");
     /*
     Exercise 1:
     makePassword() takes a password as an argument and returns a function that
@@ -17,11 +18,23 @@
     (sometimes you need to read these closure descriptions a few times to get them):
     */
     function makePassword(password) {
-      return password(passwordGuess) {
+      // - guess() being returned from makePassword() is a closure
+      //   with an environment containing the free variable password.
+      // - using named function expression as a way to refer to the name of the
+      //   inner function. Must invoke returned function using tryGuess (not guess).
+      return function guess(passwordGuess) {
         return (passwordGuess === password);
       };
     }
 
+    // pass the value 'secret' to makePassword so this is
+    // the value that's stored in the closure's environment.
+    let tryGuess = makePassword("secret");
+
+    // when we invoke tryGuess(), we compare the word we pass ('nope' or 'secret')
+    // with the value for password in the environment for tryGuess.
+    console.log(`Guessing 'nope': ${tryGuess("nope")}`);
+    console.log(`Guessing 'secret': ${tryGuess("secret")}`);
 
   </script>
   <script src="../shared/reload.js"></script>
