@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 11: Closures with Event Handlers (Click Me!)</title>
+  <style>
+    body, button { margin: 10px; }
+    div { padding: 10px; }
+  </style>
+</head>
+<body>
+  Closures with Event Handlers
+  <br><br><br>
+  <button id="clickme">Click me!</button>
+  <div id="message"></div>
+  <script>
+    "use strict";
+
+    let count = 0;
+
+    window.onload = function() {
+      let button = document.getElementById('clickme');
+
+      button.onclick = function() {
+        let message = "You clicked me ";
+        let div = document.getElementById('message');
+        count++;
+        div.innerHTML = `${message} ${count} times!`;
+      };
+    };
+
+  </script>
+  <script src="../shared/reload.js"></script>
+</body>
+</html>
