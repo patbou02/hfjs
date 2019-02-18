@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 11: Closures Exercises</title>
+</head>
+<body>
+  Closures Exercises
+  <script>
+
+    console.log("--- Exercise 1: ---");
+    /*
+    Exercise 1:
+    makePassword() takes a password as an argument and returns a function that
+    accepts a password guess and returns true if the guess matches the password
+    (sometimes you need to read these closure descriptions a few times to get them):
+    */
+    function makePassword(password) {
+      // - guess() being returned from makePassword() is a closure
+      //   with an environment containing the free variable password.
+      // - using named function expression as a way to refer to the name of the
+      //   inner function. Must invoke returned function using tryGuess (not guess).
+      return function guess(passwordGuess) {
+        return (passwordGuess === password);
+      };
+    }
+
+    // pass the value 'secret' to makePassword so this is
+    // the value that's stored in the closure's environment.
+    let tryGuess = makePassword("secret");
+
+    // when we invoke tryGuess(), we compare the word we pass ('nope' or 'secret')
+    // with the value for password in the environment for tryGuess.
+    console.log(`Guessing 'nope': ${tryGuess("nope")}`);
+    console.log(`Guessing 'secret': ${tryGuess("secret")}`);
+
+    console.log("\n\n--- Exercise 2: ---");
+    /*
+    Exercise 2:
+    the multN function takes a number (call it n) and returns a function.
+    That function itself takes a number, multiplies it by n and returns the result:
+    */
+    function multN(n) {
+      // - multBy() being returned by multN() is a closure
+      //   with an environment containing the free variable n.
+      return function multBy(m) {
+        return (n * m);
+      };
+    }
+
+    // pass the value 3 to multN so this is the value's stored in the closure's environment.
+    // by invoking multN(3) we get back a function that multiplies any number we give it by 3.
+    let multBy3 = multN(3);
+
+    console.log(`Multiplying 3 by 2 = ${multBy3(2)}.`);
+    console.log(`Multiplying 3 by 6 = ${multBy3(6)}.`);
+
+    console.log("\n\n--- Exercise 3: ---");
+    /*
+    Exercise 3:
+    This is a modification of the counter we just created. makeCounter takes no arguments, but
+    defines a count variable. It then creates and returns an object with one method, increment.
+    This method increments the count variable and returns it.
+    */
+    function makeCounter() {
+      let count = 0;
+
+      // similar to previous example found in closures.html file but this time returned value
+      // is an object with an increment method instead of returning a function directly.
+      return {
+        // increment method has free variable count therefore increment method
+        // is a closure with an environment containing the variable count.
+        increment: function() {
+          count++;
+
+          return count;
+        }
+      };
+    }
+
+    // we call makeCounter() and get back an object with a method (that happens to be a closure).
+    let counter = makeCounter();
+
+    // we invoke the method the usual way and when we do, the
+    // method references the variable count in its environment.
+    console.log(counter.increment());
+    console.log(counter.increment());
+    console.log(counter.increment());
+
+  </script>
+  <script src="../shared/reload.js"></script>
+</body>
+</html>
