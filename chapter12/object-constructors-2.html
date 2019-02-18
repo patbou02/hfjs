@@ -16,6 +16,13 @@ Objects Constructors Example #2
     this.name = name;
     this.breed = breed;
     this.weight = weight;
+    this.bark = function() {
+      if (this.weight > 25) {
+        alert(`${this.name} says Woof!`);
+      } else {
+        alert(`${this.name} says Yip!`);
+      }
+    };
   }
 
   let FIDO = new Dog("Fido", "Mixed", 38);
@@ -30,6 +37,8 @@ Objects Constructors Example #2
       size = "large";
     }
     console.log(`Dog: ${dogs[i].name} is a ${size} ${dogs[i].breed}.`);
+
+    dogs[i].bark();
   }
 </script>
 <script src="../shared/reload.js"></script>
