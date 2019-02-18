@@ -34,17 +34,17 @@
 
     function showAnswer(eventObj) {
       let img = eventObj.target;
-      let name = img.id + ".jpg";
+      let name = `${img.id}.jpg`;
 
-      img.src = "../chapter9/images/" + name;
+      img.src = `../chapter9/images/${name}`;
 
       setTimeout(reblur, 2000, img);
     }
 
     function reblur(img) {
-      let name = img.id + "blur.jpg";
+      let name = `${img.id}blur.jpg`;
 
-      img.src = "../chapter9/images/" + name;
+      img.src = `../chapter9/images/${name}`;
     }
 
     window.onload = init;
