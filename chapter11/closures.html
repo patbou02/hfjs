@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 11: Closures</title>
+</head>
+<body>
+  Closures Example
+  <script>
+
+    // Typical Counter
+    /*let count = 0;
+
+    function counter() {
+      count++;
+
+      return count;
+    }
+
+    console.log(counter());
+    console.log(counter());
+    console.log(counter());*/
+
+    // Refactor above using a closure
+    function makeCounter() {
+      let count = 0;          // count is now a local variable
+
+      function counter() {    // counter function as in previous example
+        count++;
+
+        return count;
+      }
+
+      return counter;         // return the counter function
+      // this is the closure as it holds 'count' in its environment
+    }
+
+    // test drive counter closure above
+    let doCount = makeCounter();
+
+    console.log(doCount());
+    console.log(doCount());
+    console.log(doCount());
+    console.log(doCount());
+
+  </script>
+  <script src="../shared/reload.js"></script>
+</body>
+</html>
