@@ -36,7 +36,7 @@
     console.log(`Guessing 'nope': ${tryGuess("nope")}`);
     console.log(`Guessing 'secret': ${tryGuess("secret")}`);
 
-    console.log("--- Exercise 2: ---");
+    console.log("\n\n--- Exercise 2: ---");
     /*
     Exercise 2:
     the multN function takes a number (call it n) and returns a function.
@@ -56,6 +56,38 @@
 
     console.log(`Multiplying 3 by 2 = ${multBy3(2)}.`);
     console.log(`Multiplying 3 by 6 = ${multBy3(6)}.`);
+
+    console.log("\n\n--- Exercise 3: ---");
+    /*
+    Exercise 3:
+    This is a modification of the counter we just created. makeCounter takes no arguments, but
+    defines a count variable. It then creates and returns an object with one method, increment.
+    This method increments the count variable and returns it.
+    */
+    function makeCounter() {
+      let count = 0;
+
+      // similar to previous example found in closures.html file but this time returned value
+      // is an object with an increment method instead of returning a function directly.
+      return {
+        // increment method has free variable count therefore increment method
+        // is a closure with an environment containing the variable count.
+        increment: function() {
+          count++;
+
+          return count;
+        }
+      };
+    }
+
+    // we call makeCounter() and get back an object with a method (that happens to be a closure).
+    let counter = makeCounter();
+
+    // we invoke the method the usual way and when we do, the
+    // method references the variable count in its environment.
+    console.log(counter.increment());
+    console.log(counter.increment());
+    console.log(counter.increment());
 
   </script>
   <script src="../shared/reload.js"></script>
