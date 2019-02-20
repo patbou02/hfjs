@@ -36,6 +36,21 @@ Objects Constructors Example #4 (Production Time)
     };
   }
 
+  let CHEVY = new Car("Chevy", "Bel Air", 1957, "red", 2, false, 1021);
+  let CADI = new Car("GM", "Cadillac", 1955, "tan", 5, false, 12892);
+  let TAXI = new Car("Webville Motors", "Taxi", 1955, "yellow", 4, false, 281341);
+  let FIAT = new Car("Fiat", "500", 1957, "Medium Blue", 2, false, 88000);
+  let TESTCAR = new Car("Webville Motors", "Test Car", 2014, "marine", 2, true, 21);
+
+  let cars = [CHEVY, CADI, TAXI, FIAT, TESTCAR];
+
+  for (let i = 0; i < cars.length; i++) {
+    cars[i].start();
+    cars[i].drive();
+    cars[i].drive();
+    cars[i].stop();
+  }
+
 
 </script>
 <script src="../shared/reload.js"></script>
