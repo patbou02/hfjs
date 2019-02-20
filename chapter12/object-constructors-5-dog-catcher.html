@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 12: Objects</title>
+</head>
+<body>
+Objects Constructors Example #5 (Dog Catcher)
+<br><br><br>
+<script>
+  "use strict";
+
+  function dogCatcher(obj) {
+    return (obj instanceof Dog);
+  }
+
+  function Cat(name, breed, weight) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+  }
+
+  let MEOW = new Cat("Meow", "Siamese", 10);
+  let WHISKERS = new Cat("Whiskers", "Mixed", 12);
+
+  let FIDO = {name: "Fido", breed: "Mixed", weight: 38};
+
+  function Dog(name, breed, weight) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+    this.bark = function() {
+      if (this.weight > 25) {
+        alert(`${this.name} says Woof!`);
+      } else {
+        alert(`${this.name} says Yip!`);
+      }
+    };
+  }
+
+  let FLUFFY = new Dog("Fluffy", "Poodle", 30);
+  let SPOT = new Dog("Spot", "Chihuahua", 10);
+
+  let dogs = [MEOW, WHISKERS, FIDO, FLUFFY, SPOT];
+
+  for (let i = 0; i < dogs.length; i++) {
+    (dogCatcher(dogs[i])) ? console.log(`${dogs[i].name} is a dog!`) : console.log(`${dogs[i].name} is NOT a dog.`);
+  }
+
+
+</script>
+<script src="../shared/reload.js"></script>
+</body>
+</html>
