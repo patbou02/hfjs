@@ -38,6 +38,8 @@ Prototypes Example #6 (Space Robot)
     this.owner = owner;
     this.homePlanet = homePlanet;
   }
+  
+  SpaceRobot.prototype = new Robot();
 
   // SpaceRobot Prototype
   SpaceRobot.prototype.speak = function() {
