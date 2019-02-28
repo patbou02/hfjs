@@ -46,13 +46,17 @@ Prototypes Example #6 (Space Robot)
     console.log(`speak SpaceRobot method inside ${this.name}.`);
   };
   SpaceRobot.prototype.pilot = function() {
-    console.log(`pilot Spacerobot method inside ${this.name}.`);
+    console.log(`pilot SpaceRobot method inside ${this.name}.`);
   };
 
   // SpaceRobot instances
   let C3PO = new SpaceRobot("C3PO", 1977, "Luke Skywalker", "Tatooine");
   C3PO.speak();
   C3PO.pilot();
+  let SIMON = new SpaceRobot("Simon", 2009, "Carla Diana", "Earth");
+  SIMON.makeCoffee();
+  SIMON.blinkLights();
+  SIMON.speak();
 
 </script>
 <script src="../shared/reload.js"></script>
