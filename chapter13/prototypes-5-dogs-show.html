@@ -40,6 +40,17 @@ Prototypes Example #5 (Dogs Show)
     }
   };
 
+  // ShowDog Constructor
+  function ShowDog(name, breed, weight, handler) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+    this.handler = handler;
+  }
+
+  // ShowDog Prototype set to be a new Dog instance
+  ShowDog.prototype = new Dog();
+
 
 </script>
 <script src="../shared/reload.js"></script>
