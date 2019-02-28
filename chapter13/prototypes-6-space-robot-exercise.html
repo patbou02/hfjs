@@ -12,7 +12,29 @@ Prototypes Example #6 (Space Robot)
 <script>
   "use strict";
 
-  
+  // Robot Constructor
+  function Robot(name, year, owner) {
+    this.name = name;
+    this.year = year;
+    this.owner = owner;
+  }
+
+  // Robots Prototype
+  Robot.prototype.maker = "ObjectsRUs";
+  Robot.prototype.speak = function() {
+    console.log("Speak Robot method.");
+  };
+  Robot.prototype.makeCoffee = function() {
+    console.log("makeCoffee Robot method.");
+  };
+  Robot.prototype.blinkLights = function() {
+    console.log("blinkLights Robot method.");
+  };
+
+  // SpaceRobot Constructor
+
+  // SpaceRobot Prototype
+
 
 
 </script>
