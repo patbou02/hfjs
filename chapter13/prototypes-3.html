@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 13: Prototypes</title>
+</head>
+<body>
+Prototypes Example #3
+<br><br><br>
+<script>
+  "use strict";
+
+  function Game() {
+    this.level = 0;
+  }
+
+  Game.prototype.play = function() {
+    // player plays game here
+    this.level++;
+    console.log(`Welcome to level ${this.level}`);
+    this.unlock();
+  };
+
+  Game.prototype.unlock = function() {
+    console.log('inside unlock');
+    if (this.level === 42) {
+      console.log('inside IF inside unlock');
+      Robot.prototype.deployLaser = function() {
+        console.log(`${this.name} has deployed the laser! Watch out!`);
+      }
+    }
+  };
+
+  function Robot(name, year, owner) {
+    this.name = name;
+    this.year = year;
+    this.owner = owner;
+  }
+
+  let GAME = new Game();
+  let ROBBY = new Robot("Robby", 1956, "Dr. Morbius");
+  let ROSIE = new Robot("Rosie", 1962, "George Jetson");
+
+  while(GAME.level < 42) {
+    GAME.play();
+  }
+
+  ROBBY.deployLaser();
+  ROSIE.deployLaser();
+
+
+</script>
+<script src="../shared/reload.js"></script>
+</body>
+</html>

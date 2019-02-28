@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 13: Prototypes</title>
+</head>
+<body>
+Prototypes Example #5 (Dogs Show)
+<br><br><br>
+<script>
+  "use strict";
+
+  // Dog Constructor
+  function Dog(name, breed, weight) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+  }
+
+  // Dog Prototype
+  Dog.prototype.species = "Canine";
+  Dog.prototype.sitting = false;
+  Dog.prototype.bark = function() {
+    (this.weight > 25) ? console.log(`${this.name} says Woof!`) : console.log(`${this.name} says Yip!`);
+  };
+  Dog.prototype.run = function() {
+    console.log("Run!");
+  };
+  Dog.prototype.wag = function() {
+    console.log("Wag!");
+  };
+  Dog.prototype.sit = function() {
+    if (this.sitting) {
+      console.log(`${this.name} is already sitting.`);
+    } else {
+      this.sitting = true;
+      console.log(`${this.name} is now sitting.`);
+    }
+  };
+
+  // ShowDog Constructor
+  function ShowDog(name, breed, weight, handler) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+    this.handler = handler;
+  }
+
+  // ShowDog Prototype set to be a new Dog instance
+  ShowDog.prototype = new Dog();
+
+  // ShowDog Prototype properties and methods
+  ShowDog.prototype.league = "Webville";
+  ShowDog.prototype.stack = function() {
+    console.log("Stack");
+  };
+  ShowDog.prototype.bait = function() {
+    console.log("Bait");
+  };
+  ShowDog.prototype.gait = function() {
+    console.log("Gait");
+  };
+  ShowDog.prototype.groom = function() {
+    console.log("Groom");
+  };
+
+  // ShowDog instance object called SCOTTY
+  let SCOTTY = new ShowDog("Scotty", "Scottish Terrier", 15, "Cookie");
+
+  SCOTTY.stack();
+  SCOTTY.bark();
+  console.log(SCOTTY.league);
+  console.log(SCOTTY.species);
+
+
+</script>
+<script src="../shared/reload.js"></script>
+</body>
+</html>

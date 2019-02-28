@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 13: Prototypes</title>
+</head>
+<body>
+Prototypes Example #4
+<br><br><br>
+<script>
+  "use strict";
+
+  function Dog(name, breed, weight) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+  }
+
+  Dog.prototype.species = "Canine";
+
+  Dog.prototype.bark = function() {
+    (this.weight > 25) ? console.log(`${this.name} says Woof!`) : console.log(`${this.name} says Yip!`);
+  };
+
+  Dog.prototype.run = function() {
+    console.log("Run!");
+  };
+
+  Dog.prototype.wag = function() {
+    console.log("Wag!");
+  };
+
+  Dog.prototype.sitting = false;
+
+  Dog.prototype.sit = function() {
+    if (this.sitting) {
+      console.log(`${this.name} is already sitting.`);
+    } else {
+      this.sitting = true;
+      console.log(`${this.name} is now sitting.`);
+    }
+  };
+
+  let FIDO = new Dog("Fido", "Mixed", 38);
+  let FLUFFY = new Dog("Fluffy", "Poodle", 30);
+  let SPOT = new Dog("Spot", "Chihuahua", 10);
+
+  let BARNABY = new Dog("Barnaby", "Basset Hound", 55);
+
+  SPOT.bark = function() {
+    console.log(`${this.name} says WOOF!`)
+  };
+
+  console.log("-- FIDO dog object --");
+  FIDO.bark();
+  FIDO.run();
+  FIDO.wag();
+
+  console.log("-- FLUFFY dog object --");
+  FLUFFY.bark();
+  FLUFFY.run();
+  FLUFFY.wag();
+
+  console.log("-- SPOT dog object --");
+  SPOT.bark();
+  SPOT.run();
+  SPOT.wag();
+  SPOT.sit();
+  SPOT.sit();
+
+  console.log("-- BARNABY dog object --");
+  BARNABY.sit();
+  BARNABY.sit();
+
+</script>
+<script src="../shared/reload.js"></script>
+</body>
+</html>

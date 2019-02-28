@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 13: Prototypes</title>
+</head>
+<body>
+Prototypes Example #2
+<br><br><br>
+<script>
+  "use strict";
+
+  function Robot(name, year, owner) {
+    this.name = name;
+    this.year = year;
+    this.owner = owner;
+  }
+
+  Robot.prototype.maker = "ObjectRUs";
+
+  Robot.prototype.speak = function() {
+    console.log("Hello! I am the speak prototype method");
+  };
+
+  Robot.prototype.makeCoffee = function() {
+    console.log("I am the makeCoffee prototype method");
+  };
+
+  Robot.prototype.blinkLights = function() {R
+    console.log("I am the blinkLights prototype method.");
+  };
+
+  let ROBBY = new Robot("Robby", 1956, "Dr. Morbius");
+  let ROSIE = new Robot("Rosie", 1962, "George Jetson");
+
+  ROBBY.onOffSwitch = function() {
+    console.log("I am the onOffSwitch that's only defined in ROBBY");
+  };
+
+  ROSIE.makeCoffee = function() {
+    console.log("I am the makeCoffee method in ROSIE which overrides the prototype method.");
+  };
+
+  ROSIE.cleanHouse = function() {
+    console.log("I am the cleanHouse method in ROSIE.");
+  };
+
+  console.log(`${ROBBY.name} was made by ${ROBBY.maker} in ${ROBBY.year} and is owned by ${ROBBY.owner}.`);
+
+  ROBBY.makeCoffee();
+  ROBBY.blinkLights();
+
+  console.log(`${ROSIE.name} was made by ${ROSIE.maker} in ${ROSIE.year} and is owned by ${ROSIE.owner}.`);
+
+  ROSIE.cleanHouse();
+
+</script>
+<script src="../shared/reload.js"></script>
+</body>
+</html>
