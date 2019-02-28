@@ -22,7 +22,7 @@ Prototypes Example #6 (Space Robot)
   // Robots Prototype
   Robot.prototype.maker = "ObjectsRUs";
   Robot.prototype.speak = function() {
-    console.log("Speak Robot method.");
+    console.log("speak Robot method.");
   };
   Robot.prototype.makeCoffee = function() {
     console.log("makeCoffee Robot method.");
@@ -32,9 +32,20 @@ Prototypes Example #6 (Space Robot)
   };
 
   // SpaceRobot Constructor
+  function SpaceRobot(name, year, owner, homePlanet) {
+    this.name = name;
+    this.year = year;
+    this.owner = owner;
+    this.homePlanet = homePlanet;
+  }
 
   // SpaceRobot Prototype
-
+  SpaceRobot.prototype.speak = function() {
+    console.log("speak SpaceRobot method.");
+  };
+  SpaceRobot.prototype.pilot = function() {
+    console.log("pilot Spacerobot method.")
+  };
 
 
 </script>
