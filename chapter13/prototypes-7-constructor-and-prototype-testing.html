@@ -49,6 +49,7 @@ Prototypes Example #6 (Testing Dog Constructor and Prototype)
 
   // ShowDog Prototype set to be a new Dog instance
   ShowDog.prototype = new Dog();
+  ShowDog.prototype.constructor = ShowDog;
 
   // ShowDog Prototype properties and methods
   ShowDog.prototype.league = "Webville";
