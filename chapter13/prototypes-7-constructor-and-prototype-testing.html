@@ -64,6 +64,11 @@ Prototypes Example #6 (Testing Dog Constructor and Prototype)
     console.log("Groom");
   };
 
+  // Override built-in behavior
+  ShowDog.prototype.toString = function() {
+    return (`${this.name}'s handler is ${this.handler}.`);
+  };
+
   // Dog instance object called FIDO
   let FIDO = new Dog("Fido", "Mixed", 38);
   if (FIDO instanceof Dog) {
@@ -73,6 +78,7 @@ Prototypes Example #6 (Testing Dog Constructor and Prototype)
     console.log("FIDO is a ShowDog.");
   }
   console.log(`FIDO constructor is ${FIDO.constructor}.`);
+  console.log(FIDO.toString());
 
   // ShowDog instance object called SCOTTY
   let SCOTTY = new ShowDog("Scotty", "Scottish Terrier", 15, "Cookie");
@@ -83,6 +89,7 @@ Prototypes Example #6 (Testing Dog Constructor and Prototype)
     console.log("SCOTTY is a ShowDog.");
   }
   console.log(`SCOTTY constructor is ${SCOTTY.constructor}.`);
+  console.log(SCOTTY.toString());
 
 </script>
 <script src="../shared/reload.js"></script>
