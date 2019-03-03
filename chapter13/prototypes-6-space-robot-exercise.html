@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 13: Prototypes</title>
+</head>
+<body>
+Prototypes Example #6 (Space Robot)
+<br><br><br>
+<script>
+  "use strict";
+
+  // Robot Constructor
+  function Robot(name, year, owner) {
+    this.name = name;
+    this.year = year;
+    this.owner = owner;
+  }
+
+  // Robots Prototype
+  Robot.prototype.maker = "ObjectsRUs";
+  Robot.prototype.speak = function() {
+    console.log(`speak Robot method inside ${this.name}.`);
+  };
+  Robot.prototype.makeCoffee = function() {
+    console.log(`makeCoffee Robot method inside ${this.name}.`);
+  };
+  Robot.prototype.blinkLights = function() {
+    console.log(`blinkLights Robot method inside ${this.name}.`);
+  };
+
+  // SpaceRobot Constructor
+  function SpaceRobot(name, year, owner, homePlanet) {
+    this.name = name;
+    this.year = year;
+    this.owner = owner;
+    this.homePlanet = homePlanet;
+  }
+
+  SpaceRobot.prototype = new Robot();
+
+  // SpaceRobot Prototype
+  SpaceRobot.prototype.speak = function() {
+    console.log(`speak SpaceRobot method inside ${this.name}.`);
+  };
+  SpaceRobot.prototype.pilot = function() {
+    console.log(`pilot SpaceRobot method inside ${this.name}.`);
+  };
+
+  // SpaceRobot instances
+  let C3PO = new SpaceRobot("C3PO", 1977, "Luke Skywalker", "Tatooine");
+  C3PO.speak();
+  C3PO.pilot();
+  let SIMON = new SpaceRobot("Simon", 2009, "Carla Diana", "Earth");
+  SIMON.makeCoffee();
+  SIMON.blinkLights();
+  SIMON.speak();
+
+</script>
+<script src="../shared/reload.js"></script>
+</body>
+</html>
