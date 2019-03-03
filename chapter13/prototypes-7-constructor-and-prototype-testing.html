@@ -67,11 +67,23 @@ Prototypes Example #6 (Testing Dog Constructor and Prototype)
 
   // Dog instance object called FIDO
   let FIDO = new Dog("Fido", "Mixed", 38);
+  if (FIDO instanceof Dog) {
+    console.log("FIDO is a Dog.");
+  }
+  if (FIDO instanceof ShowDog) {
+    console.log("FIDO is a ShowDog.");
+  }
+  console.log(`FIDO constructor is ${FIDO.constructor}.`);
 
   // ShowDog instance object called SCOTTY
   let SCOTTY = new ShowDog("Scotty", "Scottish Terrier", 15, "Cookie");
-
-
+  if (SCOTTY instanceof Dog) {
+    console.log("SCOTTY is a Dog.");
+  }
+  if (SCOTTY instanceof ShowDog) {
+    console.log("SCOTTY is a ShowDog.");
+  }
+  console.log(`SCOTTY constructor is ${SCOTTY.constructor}.`);
 
 </script>
 <script src="../shared/reload.js"></script>
