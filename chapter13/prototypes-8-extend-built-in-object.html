@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 13: Prototypes</title>
+</head>
+<body>
+Prototypes Example #8 (Extend Built-In Objects)
+<script>
+  "use strict";
+
+  // EXTEND String prototype with cliche method
+  String.prototype.cliche = function() {
+    let cliche = [
+      "lock and load",
+      "touch base",
+      "open the kimono",
+    ];
+
+    for (let i = 0; i < cliche.length; i++) {
+      let index = this.indexOf(cliche[i]);
+      if (index >= 0) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  // Set test variable
+  let sentences = [
+    "I'll send my car around to pick you up.",
+    "Let's touch base in the morning and see where we are",
+    "We don't want to open the kimono, we just want to inform them.",
+  ];
+
+  for (let i = 0; i < sentences.length; i++) {
+    let phrase = sentences[i];
+    if (phrase.cliche()) {
+      console.log(`CLICHE ALERT: ${phrase}`);
+    }
+  }
+
+
+
+</script>
+<script src="../shared/reload.js"></script>
+</body>
+</html>
