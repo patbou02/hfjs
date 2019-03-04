@@ -10,12 +10,12 @@ let DJ = {
   sound: "bells",
 };
 
-let controller = {
+let CONTROLLER = {
   start: function() {
     setInterval(DJ.playsound, 1000);
   }
 };
 
 window.onload = function () {
-  controller.start();
+  CONTROLLER.start();
 };
