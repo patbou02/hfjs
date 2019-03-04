@@ -5,7 +5,7 @@ console.info('Keeping track of THIS');
 
 let DJ = {
   playsound: function() {
-    console.log(`(playsound) This is: ${this}.`);
+    //console.log(`(playsound) This is: ${this}.`);
     console.log(`Playing ${this.sound}`);
   },
   sound: "bells",
