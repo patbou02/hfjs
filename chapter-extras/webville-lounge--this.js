@@ -13,7 +13,9 @@ let DJ = {
 
 let CONTROLLER = {
   start: function() {
-    setInterval(DJ.playsound, 1000);
+    setInterval(function() {
+      DJ.playsound();
+    }, 1000);
   }
 };
 
