@@ -15,3 +15,7 @@ let controller = {
     setInterval(DJ.playsound, 1000);
   }
 };
+
+window.onload = function () {
+  controller.start();
+};
