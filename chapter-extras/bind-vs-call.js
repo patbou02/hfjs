@@ -12,3 +12,6 @@ let dog = {
 };
 
 testThis.call(dog); // <== CALLs testThis right away
+
+let newFunction = testThis.bind(dog);
+newFunction();
