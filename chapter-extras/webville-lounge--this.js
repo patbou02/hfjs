@@ -14,11 +14,11 @@ let DJ = {
 let CONTROLLER = {
   timer: null,
   start: function() {
-    console.log('(start method) This: ', this);
+    //console.log('(start method) This: ', this);
     this.timer = setInterval(DJ.playsound.bind(DJ), 1000);
   },
   stop: function() {
-    console.log('(stop method) This: ', this);
+    //console.log('(stop method) This: ', this);
     clearInterval(this.timer);
   },
 };
@@ -40,6 +40,3 @@ window.onload = function () {
   * to make sure CONTROLLER is bound to THIS. */
   stopButton.onclick = CONTROLLER.stop.bind(CONTROLLER);
 };
-
-//let newPlaysound = DJ.playsound.bind(DJ);
-//setInterval(newPlaysound, 1000);
