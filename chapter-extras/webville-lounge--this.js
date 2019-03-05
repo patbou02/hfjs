@@ -25,6 +25,8 @@ let CONTROLLER = {
 
 window.onload = function () {
   let startButton = document.getElementById('start');
+  let stopButton = document.getElementById('stop');
+
   /*
   * Method 1 - Using anonymous function:
   * call start() method of the CONTROLLER object within an anonymous function
@@ -33,7 +35,6 @@ window.onload = function () {
     CONTROLLER.start();
   };
 
-  let stopButton = document.getElementById('stop');
   /*
   * Method 2 - Using bind():
   * Use within CONTROLLER.stop() and pass CONTROLLER thru it in order
