@@ -18,6 +18,7 @@ let CONTROLLER = {
     this.timer = setInterval(DJ.playsound.bind(DJ), 1000);
   },
   stop: function() {
+    console.log('(stop method) This: ', this);
     clearInterval(this.timer);
   },
 };
@@ -27,10 +28,7 @@ window.onload = function () {
   startButton.onclick = CONTROLLER.start;
 
   let stopButton = document.getElementById('stop');
-  //stopButton.onclick = CONTROLLER.stop;
-  stopButton.onclick = function() {
-    console.log('(stopButton) This: ', this);
-  };
+  stopButton.onclick = CONTROLLER.stop;
 };
 
 //let newPlaysound = DJ.playsound.bind(DJ);
