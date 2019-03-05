@@ -12,10 +12,14 @@ let DJ = {
 };
 
 let CONTROLLER = {
+  timer: null,
   start: function() {
     console.log('(start method) This: ', this);
-    setInterval(DJ.playsound.bind(DJ), 1000);
-  }
+    this.timer = setInterval(DJ.playsound.bind(DJ), 1000);
+  },
+  stop: function() {
+    clearInterval(this.timer);
+  },
 };
 
 window.onload = function () {
