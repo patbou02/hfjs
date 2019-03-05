@@ -25,7 +25,13 @@ let CONTROLLER = {
 
 window.onload = function () {
   let startButton = document.getElementById('start');
-  startButton.onclick = CONTROLLER.start;
+  /*
+  * Method 1 - Using anonymous function:
+  * call start() method of the CONTROLLER object within an anonymous function
+  * to insure that THIS is set to CONTROLLER. */
+  startButton.onclick = function() {
+    CONTROLLER.start();
+  };
 
   let stopButton = document.getElementById('stop');
   stopButton.onclick = CONTROLLER.stop;
