@@ -12,14 +12,31 @@ let DJ = {
 };
 
 let CONTROLLER = {
+  timer: null,
   start: function() {
-    setInterval(DJ.playsound.bind(DJ), 1000);
-  }
+    //console.log('(start method) This: ', this);
+    this.timer = setInterval(DJ.playsound.bind(DJ), 1000);
+  },
+  stop: function() {
+    //console.log('(stop method) This: ', this);
+    clearInterval(this.timer);
+  },
 };
 
 window.onload = function () {
-  CONTROLLER.start();
-};
+  let startButton = document.getElementById('start');
+  /*
+  * Method 1 - Using anonymous function:
+  * call start() method of the CONTROLLER object within an anonymous function
+  * to insure that THIS is set to CONTROLLER. */
+  startButton.onclick = function() {
+    CONTROLLER.start();
+  };
 
-let newPlaysound = DJ.playsound.bind(DJ);
-setInterval(newPlaysound, 1000);
+  let stopButton = document.getElementById('stop');
+  /*
+  * Method 2 - Using bind():
+  * Use within CONTROLLER.stop() and pass CONTROLLER thru it in order
+  * to make sure CONTROLLER is bound to THIS. */
+  stopButton.onclick = CONTROLLER.stop.bind(CONTROLLER);
+};
