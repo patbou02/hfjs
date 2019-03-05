@@ -27,7 +27,10 @@ window.onload = function () {
   startButton.onclick = CONTROLLER.start;
 
   let stopButton = document.getElementById('stop');
-  stopButton.onclick = CONTROLLER.stop;
+  //stopButton.onclick = CONTROLLER.stop;
+  stopButton.onclick = function() {
+    console.log('(stopButton) This: ', this);
+  };
 };
 
 //let newPlaysound = DJ.playsound.bind(DJ);
