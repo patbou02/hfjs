@@ -13,13 +13,18 @@ let DJ = {
 
 let CONTROLLER = {
   start: function() {
+    console.log('(start method) This: ', this);
     setInterval(DJ.playsound.bind(DJ), 1000);
   }
 };
 
 window.onload = function () {
-  CONTROLLER.start();
+  let startButton = document.getElementById('start');
+  startButton.onclick = CONTROLLER.start;
+
+  let stopButton = document.getElementById('stop');
+  stopButton.onclick = CONTROLLER.stop;
 };
 
-let newPlaysound = DJ.playsound.bind(DJ);
-setInterval(newPlaysound, 1000);
+//let newPlaysound = DJ.playsound.bind(DJ);
+//setInterval(newPlaysound, 1000);
