@@ -35,8 +35,8 @@ window.onload = function () {
 
   let stopButton = document.getElementById('stop');
   /*
-  * Method 2 - Using BIND:
-  * call bind() within CONTROLLER.stop() and pass CONTROLLER thru it in order
+  * Method 2 - Using bind():
+  * Use within CONTROLLER.stop() and pass CONTROLLER thru it in order
   * to make sure CONTROLLER is bound to THIS. */
   stopButton.onclick = CONTROLLER.stop.bind(CONTROLLER);
 };
