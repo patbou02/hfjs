@@ -34,7 +34,11 @@ window.onload = function () {
   };
 
   let stopButton = document.getElementById('stop');
-  stopButton.onclick = CONTROLLER.stop;
+  /*
+  * Method 2 - Using BIND:
+  * call bind() within CONTROLLER.stop() and pass CONTROLLER thru it in order
+  * to make sure CONTROLLER is bound to THIS. */
+  stopButton.onclick = CONTROLLER.stop.bind(CONTROLLER);
 };
 
 //let newPlaysound = DJ.playsound.bind(DJ);
